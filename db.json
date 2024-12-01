@@ -1,0 +1,113 @@
+{
+  "requisitions": [
+    {
+      "requisitionId": "0001",
+      "timeSampleTaken": "2024-10-29T09:30:00Z",
+      "firstName": "John",
+      "surname": "Doe",
+      "gender": "M",
+      "dateOfBirth": "1985-06-15",
+      "age": 39,
+      "mobileNumber": "+27821234567",
+      "requestedTests": [
+        {
+          "testId": 1,
+          "result": "Normal",
+          "comment": "No issues detected."
+        },
+        {
+          "testId": 3,
+          "result": "Abnormal",
+          "comment": "High levels detected."
+        }
+      ],
+      "id": "5c9d"
+    },
+    {
+      "requisitionId": "0002",
+      "timeSampleTaken": "2024-10-30T11:15:00Z",
+      "firstName": "Jane",
+      "surname": "Smith",
+      "gender": "F",
+      "dateOfBirth": "1990-04-25",
+      "age": 34,
+      "mobileNumber": "+27835678901",
+      "requestedTests": [
+        {
+          "testId": 2,
+          "result": "Normal",
+          "comment": ""
+        },
+        {
+          "testId": 5,
+          "result": "Pending",
+          "comment": ""
+        }
+      ],
+      "id": "0ee9"
+    },
+    {
+      "requisitionId": "0003",
+      "timeSampleTaken": "2024-10-31T08:45:00Z",
+      "firstName": "Alice",
+      "surname": "Brown",
+      "gender": "F",
+      "dateOfBirth": "1978-03-08",
+      "age": 46,
+      "mobileNumber": "+27891234567",
+      "requestedTests": [
+        {
+          "testId": 6,
+          "result": "Abnormal",
+          "comment": "Requires immediate attention."
+        }
+      ],
+      "id": "40b1"
+    },
+    {
+      "id": "397f",
+      "requisitionId": "0004",
+      "timeSampleTaken": "2024-12-01T18:25:53.526Z",
+      "firstName": "Jessica",
+      "surname": "King",
+      "gender": "F",
+      "dateOfBirth": "2024-11-30T22:00:00.000Z",
+      "mobileNumber": "+27123456789",
+      "requestedTests": [
+        {
+          "testId": 1,
+          "result": "",
+          "comment": ""
+        },
+        {
+          "testId": 2,
+          "result": "",
+          "comment": ""
+        }
+      ]
+    },
+    {
+      "id": "8d00",
+      "requisitionId": "0005",
+      "timeSampleTaken": "2024-11-27T10:00",
+      "firstName": "Test",
+      "surname": "Test",
+      "gender": "U",
+      "dateOfBirth": "1992-02-18T22:00:00.000Z",
+      "age": 32,
+      "mobileNumber": "+27123456789",
+      "requestedTests": [
+        {
+          "testId": 1,
+          "result": "",
+          "comment": ""
+        },
+        {
+          "testId": 2,
+          "result": "",
+          "comment": ""
+        }
+      ]
+    }
+  ]
+}

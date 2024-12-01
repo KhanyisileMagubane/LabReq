@@ -1,0 +1,144 @@
+<div class="container-requistion">
+  <h2 mat-dialog-title>{{ title }}</h2>
+
+  <mat-dialog-content [formGroup]="formGroup">
+    <div class="form-container">
+      <mat-form-field appearance="fill">
+        <mat-label>Requisition ID</mat-label>
+        <input
+          matInput
+          type="text"
+          formControlName="requisitionId"
+          placeholder="Enter Requisition ID"
+        />
+        <mat-error *ngIf="formGroup.get('requisitionId')?.hasError('required')">
+          Requisition ID is required.
+        </mat-error>
+        <mat-error *ngIf="formGroup.get('requisitionId')?.hasError('pattern')">
+          Requisition ID must be a 4-digit number.
+        </mat-error>
+        <mat-error *ngIf="formGroup.get('requisitionId')?.hasError('range')">
+          Must be between 0001 and 9999.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Time Sample Taken</mat-label>
+        <input
+          matInput
+          type="datetime-local"
+          formControlName="timeSampleTaken"
+          placeholder="Select date and time"
+        />
+        <mat-error
+          *ngIf="formGroup.get('timeSampleTaken')?.hasError('required')"
+        >
+          Time Sample Taken is required.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>First Name</mat-label>
+        <input
+          matInput
+          type="text"
+          formControlName="firstName"
+          placeholder="Enter First Name"
+        />
+        <mat-error *ngIf="formGroup.get('firstName')?.hasError('required')">
+          First Name is required.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Surname</mat-label>
+        <input
+          matInput
+          type="text"
+          formControlName="surname"
+          placeholder="Enter Surname"
+        />
+        <mat-error *ngIf="formGroup.get('surname')?.hasError('required')">
+          Surname is required.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Gender</mat-label>
+        <mat-select formControlName="gender">
+          <mat-option value="M">Male</mat-option>
+          <mat-option value="F">Female</mat-option>
+          <mat-option value="U">Unspecified</mat-option>
+        </mat-select>
+        <mat-error *ngIf="formGroup.get('gender')?.hasError('required')">
+          Gender is required.
+        </mat-error>
+        <mat-error
+          *ngIf="formGroup.get('gender')?.hasError('allowedCharacters')"
+        >
+          Invalid gender selection.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Date of Birth</mat-label>
+        <input
+          matInput
+          [matDatepicker]="dobPicker"
+          formControlName="dateOfBirth"
+          placeholder="Select Date of Birth"
+        />
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="dobPicker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #dobPicker></mat-datepicker>
+        <mat-error *ngIf="formGroup.get('dateOfBirth')?.hasError('required')">
+          Date of Birth is required.
+        </mat-error>
+        <mat-error *ngIf="formGroup.get('dateOfBirth')?.hasError('dateBefore')">
+          Date of Birth must be before Time Sample Taken.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Age</mat-label>
+        <input
+          matInput
+          type="text"
+          formControlName="age"
+          placeholder="Calculated Age"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Mobile Number</mat-label>
+        <input
+          matInput
+          type="text"
+          formControlName="mobileNumber"
+          placeholder="e.g., +27123456789"
+        />
+        <mat-error *ngIf="formGroup.get('mobileNumber')?.hasError('required')">
+          Mobile Number is required.
+        </mat-error>
+        <mat-error
+          *ngIf="formGroup.get('mobileNumber')?.hasError('southAfricanMobile')"
+        >
+          Enter a valid South African mobile number (e.g., +27123456789).
+        </mat-error>
+      </mat-form-field>
+
+      <div class="full-width">
+        <app-request-data-table
+          formControlName="requestedTests"
+        ></app-request-data-table>
+      </div>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-raised-button (click)="close()">Close</button>
+    <button mat-raised-button color="primary" (click)="save()">Save</button>
+  </mat-dialog-actions>
+</div>
